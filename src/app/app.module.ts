@@ -12,19 +12,33 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './component/login/login.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './component/home/home.component';
+import { ContactComponent } from './component/contact/contact.component';
+
+const appRoutes: Routes = [
+  { path: '', component: LoginComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'contact', component: ContactComponent}
+]
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SocialLoginModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
   ],
+  exports: [RouterModule],
   providers: [
     {
       provide: 'SocialAuthServiceConfig',
