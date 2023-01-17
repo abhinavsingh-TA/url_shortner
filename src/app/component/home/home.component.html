@@ -1,1 +1,10 @@
-<p>home works!</p>
+<br>
+<div class="container">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter URL" [(ngModel)]="url" (input)="url_live()">
+        <div class="input-group-append">
+        <button class="btn btn-primary" type="button" (click)="shortenUrl()" [disabled]="url.length===0 || valid_url">Button</button>
+        </div>
+    </div>
+    <p *ngIf="valid_url" [ngStyle]="{color: 'red', marginLeft: '10px'}">Link not valid!</p>
+</div>

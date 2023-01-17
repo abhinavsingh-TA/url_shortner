@@ -15,6 +15,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent},
@@ -32,7 +34,9 @@ const appRoutes: Routes = [
     ContactComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     SocialLoginModule,
     BrowserAnimationsModule,
