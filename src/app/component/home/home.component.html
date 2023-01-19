@@ -7,4 +7,33 @@
         </div>
     </div>
     <p *ngIf="valid_url" [ngStyle]="{color: 'red', marginLeft: '10px'}">Link not valid!</p>
+    <br>
+    <div *ngIf="(content | json) != '{}'" class="card h-100 text-center" [ngStyle]="{width: '40em', marginLeft: '12em'}">
+        <div class="card-header">Response</div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Short Link</th>
+                    <td (click)="goToLink(content['full_short_link'])" [ngStyle]="{cursor: 'pointer'}">{{ content['full_short_link'] }}</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Short Link 2</th>
+                    <td (click)="goToLink(content['full_short_link2'])" [ngStyle]="{cursor: 'pointer'}">{{ content['full_short_link2'] }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Short Link 3</th>
+                    <td (click)="goToLink(content['full_short_link3'])" [ngStyle]="{cursor: 'pointer'}">{{ content['full_short_link3'] }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Share Link</th>
+                    <td (click)="goToLink(content['full_share_link'])" [ngStyle]="{cursor: 'pointer'}">{{ content['full_share_link'] }}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
 </div>
+

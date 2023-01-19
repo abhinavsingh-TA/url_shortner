@@ -14,10 +14,11 @@ export class UsersService {
   constructor(private authService: SocialAuthService, private router: Router) { }
 
   signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    setTimeout(() => {
-      this.router.navigate(['home'])
-    }, 100);
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
+    .then(result=>{
+      console.log(result)
+      this.router.navigate(['/home'])
+    })
   }
 
   signInWithFB(): void {

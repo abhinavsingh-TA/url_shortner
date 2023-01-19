@@ -1,4 +1,6 @@
+import { SocialAuthService } from '@abacritt/angularx-social-login';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/user.service';
 
 @Component({
@@ -8,7 +10,14 @@ import { UsersService } from 'src/app/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(protected userService: UsersService) { }
+  constructor(protected userService: UsersService, private authService: SocialAuthService, private router: Router) { 
+    this.authService.authState.subscribe(user => {
+      let loggedIn = this.userService.user != null;
+      if (loggedIn) {
+        this.router.navigate(['/home']);
+      }
+    });
+  }
 
   ngOnInit(): void {
   }
