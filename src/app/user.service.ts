@@ -26,8 +26,8 @@ export class UsersService {
   }
 
   signOut(): void {
-    console.log(this.user)
     this.authService.signOut();
+    this.router.navigate(['/'])
   }
   
 }

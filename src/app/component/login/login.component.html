@@ -8,8 +8,8 @@
                 <br>
                 <form>
                     <!--{% csrf_token %}-->
-                    <div class="form-group">
-                      <asl-google-signin-button type="standard" size="large" logo_alignment="center" width="400"></asl-google-signin-button>
+                    <div class="form-group" [ngStyle]="{marginLeft: 'auto', width: 'auto', textAlign: 'center'}">
+                      <asl-google-signin-button type="standard" size="large" logo_alignment="center"></asl-google-signin-button>
   
                       <!-- <button type="button" class="btn btn-primary btn-block" (click)="this.userService.signInWithGoogle()">Signin with Google</button> -->
                     </div>

@@ -11,15 +11,15 @@ import { UsersService } from 'src/app/user.service';
 export class LoginComponent implements OnInit {
 
   constructor(protected userService: UsersService, private authService: SocialAuthService, private router: Router) { 
+  }
+
+  ngOnInit(): void {
     this.authService.authState.subscribe(user => {
       let loggedIn = this.userService.user != null;
       if (loggedIn) {
         this.router.navigate(['/home']);
       }
     });
-  }
-
-  ngOnInit(): void {
   }
 
 }

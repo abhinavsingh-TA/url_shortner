@@ -1,5 +1,7 @@
+import { SocialAuthService } from '@abacritt/angularx-social-login';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/user.service';
 import validator from 'validator'
 
@@ -13,7 +15,7 @@ export class HomeComponent implements OnInit {
   valid_url: boolean = false
   content: object = {}
 
-  constructor(private http: HttpClient, protected userService: UsersService) { }
+  constructor(private http: HttpClient, private router: Router, protected userService: UsersService, private authService: SocialAuthService) { }
 
   url_live(){
     if(this.url.length === 0 || validator.isURL(this.url))
@@ -43,6 +45,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.valid_url = false
+    if(!this.userService.user)
+        this.router.navigate(['/'])
   }
 
 }
