@@ -8,7 +8,7 @@
     </div>
     <p *ngIf="valid_url" [ngStyle]="{color: 'red', marginLeft: '10px'}">Link not valid!</p>
     <br>
-    <div *ngIf="(content | json) != '{}'" class="card h-100 text-center" [ngStyle]="{width: '40em', marginLeft: '12em'}">
+    <div *ngIf="(content | json) != '{}'" class="container card h-100 text-center mb-3" [ngStyle]="{width: '40rem', marginLeft: '12rem'}">
         <div class="card-header">Response</div>
         <div class="card-body">
             <table class="table table-striped">
