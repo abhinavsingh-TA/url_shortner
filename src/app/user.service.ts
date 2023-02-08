@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class UsersService {
   user: SocialUser
-  notes: {key: string, title: string, description: string}[] = []
+  notes: any[] = []
   edit: boolean = false
   editData: {key: string, title: string, description: string}
   
@@ -28,6 +28,7 @@ export class UsersService {
   signOut(): void {
     this.authService.signOut();
     this.router.navigate(['/'])
+    this.notes = []
   }
   
 }

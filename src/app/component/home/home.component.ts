@@ -33,6 +33,8 @@ export class HomeComponent implements OnInit {
         // console.log(content)
         console.log(content['result'])
         this.content = content['result']
+        this.content['code'] = this.url
+        this.userService.notes.push(this.content)
       })
     }
     else

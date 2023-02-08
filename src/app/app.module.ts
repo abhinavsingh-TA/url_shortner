@@ -16,12 +16,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ShortenedurlsComponent } from './component/shortenedurls/shortenedurls.component'
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'contact', component: ContactComponent}
+  { path: 'contact', component: ContactComponent},
+  { path: 'shortendurls', component: ShortenedurlsComponent}
 ]
 
 
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     LoginComponent,
     NavbarComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    ShortenedurlsComponent
   ],
   imports: [
     FormsModule,

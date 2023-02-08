@@ -13,6 +13,9 @@
       <li class="nav-item">
         <a [routerLink]="['/contact']" class="nav-link" href="#">Contact Us</a>
       </li>
+      <li class="nav-item">
+        <a [routerLink]="['/shortendurls']" class="nav-link" href="#">Shortend URLs</a>
+      </li>
     <button *ngIf="this.userService.user" class="btn" [ngStyle]="{marginRight: '1.5em', backgroundColor: '#4d4d4d', color: 'whitesmoke'}" (click)="this.userService.signOut()">Sign Out</button>
   </ul>
   </div>
